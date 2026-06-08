@@ -152,26 +152,59 @@ import numpy as np
 # print(np.unique(arr))
 
 
-n=input("Enter list separated by spaces: ")
-vass1 = [int(num) for num in n.split()]
-vass=np.array(vass1)
-monday=vass[0]
-tuesday=vass[1]
-wednesday=vass[2]
-thursday=vass[3]
-friday=vass[4]
-saturday=vass[5]
-sunday=vass[6]
-print(vass)
-print(np.max(vass))
-print(np.mean(vass))
-print(np.std(vass))
-print(np.min(vass))
-print(np.unique(vass))
-print(np.sort(vass))
+# n=input("Enter list separated by spaces: ")
+# vass1 = [int(num) for num in n.split()]
+# vass=np.array(vass1)
+# monday=vass[0]
+# tuesday=vass[1]
+# wednesday=vass[2]
+# thursday=vass[3]
+# friday=vass[4]
+# saturday=vass[5]
+# sunday=vass[6]
+# print(vass)
+# print(np.max(vass))
+# print(np.mean(vass))
+# print(np.std(vass))
+# print(np.min(vass))
+# print(np.unique(vass))
+# print(np.sort(vass))
 
 
 # home work 
 # explore other functions in the numpy
 # explore the concept of copy in python 
 # price input of a grocery shop and run all these functions
+
+
+# homework
+
+
+items = []
+prices = []
+
+for i in range(7):
+    name = input(f"Enter name of item {i+1}: ")
+    price = float(input(f"Enter price of {name}: "))
+
+    items.append(name)
+    prices.append(price)
+
+prices = np.array(prices)
+
+
+max_price = np.max(prices)
+min_price = np.min(prices)
+mean_price = np.mean(prices)
+std_price = np.std(prices)
+
+
+max_item = items[np.argmax(prices)]
+min_item = items[np.argmin(prices)]
+
+
+print("\n----- Results -----")
+print(f"Most expensive item : {max_item} (₹{max_price})")
+print(f"Cheapest item       : {min_item} (₹{min_price})")
+print(f"Average price       : ₹{mean_price:.2f}")
+print(f"Standard Deviation  : ₹{std_price:.2f}")
