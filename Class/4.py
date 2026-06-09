@@ -211,30 +211,58 @@ import numpy as np
 
 
 
-a= np.random.randint(1,90,25)
-x=a.reshape(5,5)
-print(x)
-# finding the mean of the matrix row wise and the column wise 
-mean=np.mean(x,axis=1)
-print(mean)
-mean=np.mean(x,axis=0)
-print(mean)
-# replacing the even number with the -1
-sot=np.where(x%2==0,-1,x)
+# a= np.random.randint(1,90,25)
+# x=a.reshape(5,5)
+# print(x)
+# # finding the mean of the matrix row wise and the column wise 
+# mean=np.mean(x,axis=1)
+# print(mean)
+# mean=np.mean(x,axis=0)
+# print(mean)
+# # replacing the even number with the -1
+# sot=np.where(x%2==0,-1,x)
+# print(sot)
+# # sort the array row wise and the coloumn wise 
+# sor=np.sort(sot,axis=0)
+# print(sor)
+# sor=np.sort(sot,axis=1)
+# print(sor)
+# # find the row wise and the column wise sum
+# sum=np.sum(x,axis=0)
+# print(sum)
+# sum=np.sum(x,axis=1)
+# print(sum)
+# # for counting the number of -ve the each coloumns 
+# # num=np.sum(sot<0,axis=0)
+# # print(num)
+# # or
+# num=np.sum(np.where(x<0,1,0),axis=0)
+# print(num)
+
+
+# inventery control system 
+a= np.random.randint(20,80,25,dtype=int)
+stock=a.reshape(5,5)
+a= np.random.randint(20,80,25,dtype=int)
+demand=a.reshape(5,5)
+# remaining stock = stock - demand
+remaining_stock=stock-demand
+print(remaining_stock)
+# finding the total shortage 
+shortage= np.sum(np.where(remaining_stock>0,0,remaining_stock))
+print(shortage)
+
+# replacing the -ve values with the 0
+sot=np.where(remaining_stock<0,0,remaining_stock)
 print(sot)
+# finding the sum of the products with the shortage
+num=np.sum(np.where(sot==0,1,0),axis=0)
+print(num)
+total=np.sum(num)
+print(total)
+
 # sort the array row wise and the coloumn wise 
 sor=np.sort(sot,axis=0)
 print(sor)
 sor=np.sort(sot,axis=1)
 print(sor)
-# find the row wise and the column wise sum
-sum=np.sum(x,axis=0)
-print(sum)
-sum=np.sum(x,axis=1)
-print(sum)
-# for counting the number of -ve the each coloumns 
-# num=np.sum(sot<0,axis=0)
-# print(num)
-# or
-num=np.sum(np.where(x<0,1,0),axis=0)
-print(num)
