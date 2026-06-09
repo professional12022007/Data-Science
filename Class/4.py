@@ -180,31 +180,61 @@ import numpy as np
 # homework
 
 
-items = []
-prices = []
+# items = []
+# prices = []
 
-for i in range(7):
-    name = input(f"Enter name of item {i+1}: ")
-    price = float(input(f"Enter price of {name}: "))
+# for i in range(7):
+#     name = input(f"Enter name of item {i+1}: ")
+#     price = float(input(f"Enter price of {name}: "))
 
-    items.append(name)
-    prices.append(price)
+#     items.append(name)
+#     prices.append(price)
 
-prices = np.array(prices)
-
-
-max_price = np.max(prices)
-min_price = np.min(prices)
-mean_price = np.mean(prices)
-std_price = np.std(prices)
+# prices = np.array(prices)
 
 
-max_item = items[np.argmax(prices)]
-min_item = items[np.argmin(prices)]
+# max_price = np.max(prices)
+# min_price = np.min(prices)
+# mean_price = np.mean(prices)
+# std_price = np.std(prices)
 
 
-print("\n----- Results -----")
-print(f"Most expensive item : {max_item} (₹{max_price})")
-print(f"Cheapest item       : {min_item} (₹{min_price})")
-print(f"Average price       : ₹{mean_price:.2f}")
-print(f"Standard Deviation  : ₹{std_price:.2f}")
+# max_item = items[np.argmax(prices)]
+# min_item = items[np.argmin(prices)]
+
+
+# print("\n----- Results -----")
+# print(f"Most expensive item : {max_item} (₹{max_price})")
+# print(f"Cheapest item       : {min_item} (₹{min_price})")
+# print(f"Average price       : ₹{mean_price:.2f}")
+# print(f"Standard Deviation  : ₹{std_price:.2f}")
+
+
+
+a= np.random.randint(1,90,25)
+x=a.reshape(5,5)
+print(x)
+# finding the mean of the matrix row wise and the column wise 
+mean=np.mean(x,axis=1)
+print(mean)
+mean=np.mean(x,axis=0)
+print(mean)
+# replacing the even number with the -1
+sot=np.where(x%2==0,-1,x)
+print(sot)
+# sort the array row wise and the coloumn wise 
+sor=np.sort(sot,axis=0)
+print(sor)
+sor=np.sort(sot,axis=1)
+print(sor)
+# find the row wise and the column wise sum
+sum=np.sum(x,axis=0)
+print(sum)
+sum=np.sum(x,axis=1)
+print(sum)
+# for counting the number of -ve the each coloumns 
+# num=np.sum(sot<0,axis=0)
+# print(num)
+# or
+num=np.sum(np.where(x<0,1,0),axis=0)
+print(num)
